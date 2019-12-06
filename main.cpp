@@ -1,21 +1,154 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-string decToOctal(unsigned long long n){
+/*string hexToBin (string hexa){
 
-    int octNum[100];
-    int i =0 ;
+    long int i = 0 ;
     string s = "";
-    while (n > 0){
+     while (hexa[i])
+        {
+      switch (hexa[i]){
+      case '0':
+         cout << "0000";
+         break;
+      case '1':
+         cout << "0001";
+         break;
+      case '2':
+         cout << "0010";
+         break;
+      case '3':
+         cout << "0011";
+         break;
+      case '4':
+         cout << "0100";
+         break;
+      case '5':
+         cout << "0101";
+         break;
+      case '6':
+         cout << "0110";
+         break;
+      case '7':
+         cout << "0111";
+         break;
+      case '8':
+         cout << "1000";
+         break;
+      case '9':
+         cout << "1001";
+         break;
+      case 'A':
+      case 'a':
+         cout << "1010";
+         break;
+      case 'B':
+      case 'b':
+         cout << "1011";
+         break;
+      case 'C':
+      case 'c':
+         cout << "1100";
+         break;
+      case 'D':
+      case 'd':
+         cout << "1101";
+         break;
+      case 'E':
+      case 'e':
+         cout << "1110";
+         break;
+      case 'F':
+      case 'f':
+         cout << "1111";
+         break;
+      default:
+         cout <<hexa[i];
+      }
+   i++;
+   }
+   return s;
+}
+*/
+long long octalToBin(unsigned long long n){
 
-        octNum[i] = n % 8 ;
-        n/=8;
+    int decNum = 0 , i = 0 ;
+    long long binNum = 0;
+
+    while (n != 0)
+    {
+        decNum += (n % 10) * pow(8,i);
+        i++;
+        n /= 10 ;
+    }
+    i = 1 ;
+    while (decNum != 0)
+    {
+        binNum += (decNum % 2) * i ;
+        decNum /= 2 ;
+        i *= 10 ;
+    }
+    return binNum ;
+}
+
+int octalToDec(unsigned long long n){
+
+    int decNum = 0 , i = 0 , remainder ;
+    while (n !=0)
+    {
+        remainder  = n % 10 ;
+        n /= 10;
+        decNum  += remainder * pow(8 , i);
         i++;
     }
-        for(int j = i -1 ; j >=0 ; j--)
-        { cout<<octNum[i];}
+    return decNum ;
+}
 
-        return s ;
+int binToOctal(unsigned long long n){
+
+    int octalNum = 0 , decNum = 0 , i = 0 ;
+
+    while(n!=0)
+    {
+        decNum += (n%10)*pow(2,i);
+        i++;
+        n /=10;
+    }
+    i = 1 ;
+    while (decNum !=0)
+    {
+        octalNum += (decNum % 8) * i;
+        decNum /= 8 ;
+        i *= 10 ;
+    }
+    return octalNum ;
+}
+
+int binToDec(unsigned long long n){
+
+    int decNum = 0 , i =0 , remainder ;
+    while(n!=0)
+    {
+        remainder = n % 10 ;
+        n/= 10 ;
+        decNum += remainder*pow(2,i) ;
+        i++;
+    }
+    return decNum ;
+}
+
+int decToOctal(unsigned long long n){
+
+    int rem, i = 1, octalNumber = 0;
+    while (n != 0)
+    {
+        rem = n % 8;
+        n /= 8;
+        octalNumber += rem * i;
+        i *= 10;
+    }
+    return octalNumber;
 }
 
 string decToBin(unsigned long long n){
@@ -37,17 +170,17 @@ string decToBin(unsigned long long n){
 
 }
 
-string decToHex(unsigned long long dec_num){
+string decToHex(unsigned long long n){
 
     int r;
     string hexdec_num="";
     char hex[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
 
-        while(dec_num>0)
+        while(n>0)
         {
-            r = dec_num % 16;
+            r = n % 16;
             hexdec_num = hex[r] + hexdec_num;
-            dec_num = dec_num/16;
+            n = n/16;
         }
         return hexdec_num;
 }
@@ -118,9 +251,30 @@ int main(){
           cout<<"\n\t\t\t\t\t\tHEXA :  "<<decToHex(x)<<endl;
           cout<<"\n\t\t\t\t\t\tOCT :  "<<decToOctal(x)<<endl;
       break;
-     case 2: cout<<"This is case 2 "<<endl; break;
-     case 3:cout<<"This is case 3 "<<endl; break;
-     case 4:cout<<"This is case 4 "<<endl; break;
+     case 2:
+          cout<<"\n\t\t\t\t\t\tBIN  :  "<<x<<endl;
+          cout<<"\n\t\t\t\t\t\tDEC  :  "<<binToDec(x)<<endl;
+          cout<<"\n\t\t\t\t\t\tHEXA :  "<<decToHex(binToDec(x))<<endl;
+          cout<<"\n\t\t\t\t\t\tOCT :  "<<binToOctal(x)<<endl;
+        break;
+     case 3:
+         /*string hex = "" ;
+         cin>>hex;
+          cout<<"\n\t\t\t\t\t\tHEXA :  "<<x<<endl;
+          cout<<"\n\t\t\t\t\t\tOCT :  "<<endl;
+          cout<<"\n\t\t\t\t\t\tBIN  :  "<<hexToBin(hex)<<endl;
+          cout<<"\n\t\t\t\t\t\tDEC  :  "<<endl; */
+          cout<<"Test ......... "<<endl;
+
+
+        break;
+     case 4:
+          cout<<"\n\t\t\t\t\t\tOCT :  "<<x<<endl;
+          cout<<"\n\t\t\t\t\t\tBIN  :  "<<octalToBin(x)<<endl;
+          cout<<"\n\t\t\t\t\t\tDEC  :  "<<octalToDec(x)<<endl;
+          cout<<"\n\t\t\t\t\t\tHEXA :  "<<decToHex(octalToDec(x))<<endl;
+
+     break;
         }
 
     cout<<"\n\n\n\n\n\n\n\n0) Exit \n1) Proceed \n\n";
