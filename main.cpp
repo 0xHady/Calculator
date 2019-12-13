@@ -5,7 +5,7 @@ using namespace std;
 
 /*string hexToBin (string hexa){
 
-    long int i = 0 ;
+    int i = 0 ;
     string s = "";
      while (hexa[i])
         {
@@ -197,51 +197,83 @@ int main(){
 
     switch(q){
 
+/*******************************************************************
+  Basic operations
+********************************************************************/
+
         case 1 :
         {
         bool s = 1 ;
         while(s !=0){
+        // change color
         system("color 0a");
+        // clear the console
         system("CLS");
+
+        // label
+
         choice1 :
         cout<<"choose the operation \n" ;
         cout<<"1) subtraction      2) addition         "<<endl;
-        cout<<"3) devision         4) multiplication   "<<endl;
+        cout<<"3) devision         4) multiplication   \n\n"<<endl;
+        cout<<"0) Go Back                              "<<endl;
+
         int z ;
         cin>> z ;
 
         system("CLS");
-        double x , y ;
-        system("CLS");
-        cout<<"Enter the two numbers \n";
-        cin>>x>>y ;
-        system("CLS");
+
         if(cin)
         {
-            switch(z){
+          if(z == 0)
+          {
+              goto start;
+          }
+          else
+                {
+                    double x , y ;
+                    system("CLS");
+                    cout<<"Enter the two numbers \n";
+                    cin>>x>>y ;
+                    system("CLS");
+
+                    switch(z){
 
             case 1: cout<<"\n\n\n\n\n\n\t\t\t\t\t\t"<<x<<" - "<<y<<" = "<<x-y<<endl;              break;
 
             case 2: cout<<"\n\n\n\n\n\n\t\t\t\t\t\t"<<x<<" + "<<y<<" = "<<x+y<<endl;              break;
 
-            case 3: cout<<"\n\n\n\n\n\n\t\t\t\t\t\t"<<x<<" / "<<y<<" = "<<(double)x/y<<endl;      break;
+            case 3:
+                    if(y != 0)
+                    cout<<"\n\n\n\n\n\n\t\t\t\t\t\t"<<x<<" / "<<y<<" = "<<(double)x/y<<endl;
+                    else
+                    cout<<"\n\n\n\n\n\n\t\t\t\t\t\tMath Error \n ";                               break;
+
 
             case 4: cout<<"\n\n\n\n\n\n\t\t\t\t\t\t"<<x<<" * "<<y<<" = "<<x*y<<endl;              break;
 
             default : cout<<"You've choosed a Non-existing operation !!";
 
                     }
+                }
         }
-        else
-        {
-            //cout<<"Invalid input \n";
-            cin.clear();
-            cin.ignore();
-            goto choice1 ;
-        }
+            else
+                {
+                cin.clear();
+                cin.ignore();
+                goto choice1 ;
+                }
 
 
-    cout<<"\n\n\n\n\n\n\n\n0) Exit \n1) Proceed \n\n ";
+    cout<<"\n\n\n\n\n\n****************\n";
+                cout<<"****************\n";
+                cout<<"**            **\n";
+                cout<<"** 0) Exit    **\n";
+                cout<<"**            **\n";
+                cout<<"** 1) Proceed **\n";
+                cout<<"**            **\n";
+                cout<<"****************\n";
+                cout<<"****************\n";
     cin>>s;
     }
 
@@ -249,57 +281,161 @@ int main(){
         }
         break;
 
+
+
+
+
+
+
+
+  /*********************************************************************************************************************
+  Numeric systems conversions
+  *********************************************************************************************************************/
     case 2:
         {
         bool s = 1 ;
         while(s != 0){
             system("CLS");
             system("color 0a");
-
+        numeric :
         cout<<"  1)Convert from decimal        "<<endl;
         cout<<"  2)Convert from binary        "<<endl;
         cout<<"  3)Convert from hexadecimal        "<<endl;
-        cout<<"  4)Convert from octal        "<<endl;
+        cout<<"  4)Convert from octal        \n\n"<<endl;
+        cout<<"  0)Go Back                "<<endl;
         cin>>q;
         system("CLS");
+
+        if(!cin)
+        {
+            cin.clear();
+            cin.ignore();
+            system("CLS");
+            goto numeric ;
+        }
+
+        if(q == 0)
+        {
+            goto start ;
+        }
+        else if (q >4)
+        {
+            goto numeric ;
+        }
+        else if(q==3)
+        {
+           {
+       /*  string hex = "" ;
+         cin>>hex;
+          cout<<"\n\t\t\t\t\t\tHEXA :  "<<hex<<endl;
+          cout<<"\n\t\t\t\t\t\tOCT :  "<<endl;
+          cout<<"\n\t\t\t\t\t\tBIN  :  "<<hexToBin(hex)<<endl;
+          cout<<"\n\t\t\t\t\t\tDEC  :  "<<endl;*/
+          cout<<"Test ......... "<<endl;
+        break;
+                }
+        }
+        else {
+
+        system("CLS");
+        enternum :
         unsigned long long x ;
         cout<<"\n\n\n\t\t\t\t\t\tEnter the number\n\t\t\t\t\t\t "<<endl;
         cin>>x;
-        system("CLS");
+
         switch(q){
+
             case 1:
+                    if(!cin)
+                    {
+                        cin.clear();
+                        cin.ignore();
+                        system("cls");
+                        goto enternum ;
+                    }
+
+          system("cls");
           cout<<"\n\n\n\t\t\t\t\t\tDEC  :  "<<x<<endl;
           cout<<"\n\t\t\t\t\t\tBIN  :  "<<decToBin(x)<<endl;
           cout<<"\n\t\t\t\t\t\tHEXA :  "<<decToHex(x)<<endl;
           cout<<"\n\t\t\t\t\t\tOCT :  "<<decToOctal(x)<<endl;
-      break;
-            case 2:
+        break;
+
+            case 2:{
+
+
+
+                if(!cin)
+                    {
+                        cin.clear();
+                        cin.ignore();
+                        system("cls");
+                        goto enternum ;
+                    }
+
+                unsigned long long j = x ;
+                while(j)
+                {
+                    if((j%10)>1 )
+                    {
+                        system("cls");
+                        goto enternum ;
+                    }
+
+                    j /= 10 ;
+                }
+
+
+          system("cls");
           cout<<"\n\t\t\t\t\t\tBIN  :  "<<x<<endl;
           cout<<"\n\t\t\t\t\t\tDEC  :  "<<binToDec(x)<<endl;
           cout<<"\n\t\t\t\t\t\tHEXA :  "<<decToHex(binToDec(x))<<endl;
           cout<<"\n\t\t\t\t\t\tOCT :  "<<binToOctal(x)<<endl;
         break;
-            case 3:
-         /*string hex = "" ;
-         cin>>hex;
-          cout<<"\n\t\t\t\t\t\tHEXA :  "<<x<<endl;
-          cout<<"\n\t\t\t\t\t\tOCT :  "<<endl;
-          cout<<"\n\t\t\t\t\t\tBIN  :  "<<hexToBin(hex)<<endl;
-          cout<<"\n\t\t\t\t\t\tDEC  :  "<<endl; */
-          cout<<"Test ......... "<<endl;
+            }
 
+            case 4:{
+                    if(!cin)
+                    {
+                        cin.clear();
+                        cin.ignore();
+                        system("cls");
+                        goto enternum ;
+                    }
 
-        break;
-            case 4:
+                unsigned long long j = x ;
+                while(j)
+                {
+                    if((j%10)>7 )
+                    {
+                        system("cls");
+                        goto enternum ;
+                    }
+
+                    j /= 10 ;
+                }
+          system("cls");
           cout<<"\n\t\t\t\t\t\tOCT :  "<<x<<endl;
           cout<<"\n\t\t\t\t\t\tBIN  :  "<<octalToBin(x)<<endl;
           cout<<"\n\t\t\t\t\t\tDEC  :  "<<octalToDec(x)<<endl;
           cout<<"\n\t\t\t\t\t\tHEXA :  "<<decToHex(octalToDec(x))<<endl;
 
         break;
+
+
+        }
+        }
         }
 
-    cout<<"\n\n\n\n\n\n\n\n0) Exit \n1) Proceed \n\n";
+    cout<<"\n\n\n\n\n\n****************\n";
+                cout<<"****************\n";
+                cout<<"**            **\n";
+                cout<<"** 0) Exit    **\n";
+                cout<<"**            **\n";
+                cout<<"** 1) Proceed **\n";
+                cout<<"**            **\n";
+                cout<<"****************\n";
+                cout<<"****************\n";
     cin>>s;
     }
 
@@ -310,7 +446,7 @@ int main(){
          cin.clear();
          cin.ignore();
          system("cls");
-        goto start ;
+         goto start ;
 
     }
 
