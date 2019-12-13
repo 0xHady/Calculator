@@ -1,4 +1,5 @@
 #include <iostream>
+#include <windows.h>
 #include <cmath>
 using namespace std;
 
@@ -186,39 +187,59 @@ string decToHex(unsigned long long n){
 }
 
 int main(){
-
-    int q ;
+    start :
     cout<<"1) Do basic operations "<<endl;
     cout<<"2) convert between numeric systems "<<endl;
+
+    // q is the user's choice
+    int q ;
     cin>>q;
+
     switch(q){
 
         case 1 :
         {
         bool s = 1 ;
         while(s !=0){
-        system("color 0d");
+        system("color 0a");
         system("CLS");
-
+        choice1 :
         cout<<"choose the operation \n" ;
         cout<<"1) subtraction      2) addition         "<<endl;
         cout<<"3) devision         4) multiplication   "<<endl;
         int z ;
         cin>> z ;
+
         system("CLS");
         double x , y ;
+        system("CLS");
         cout<<"Enter the two numbers \n";
         cin>>x>>y ;
         system("CLS");
-
+        if(cin)
+        {
             switch(z){
 
-            case 1: cout<<"\n\n\n\n\n\n\t\t\t\t\t\t"<<x<<" - "<<y<<" = "<<x-y<<endl; break;
-            case 2: cout<<"\n\n\n\n\n\n\t\t\t\t\t\t"<<x<<" + "<<y<<" = "<<x+y<<endl; break;
-            case 3: cout<<"\n\n\n\n\n\n\t\t\t\t\t\t"<<x<<" / "<<y<<" = "<<(double)x/y<<endl; break;
-            case 4: cout<<"\n\n\n\n\n\n\t\t\t\t\t\t"<<x<<" * "<<y<<" = "<<x*y<<endl; break;
+            case 1: cout<<"\n\n\n\n\n\n\t\t\t\t\t\t"<<x<<" - "<<y<<" = "<<x-y<<endl;              break;
 
-    }
+            case 2: cout<<"\n\n\n\n\n\n\t\t\t\t\t\t"<<x<<" + "<<y<<" = "<<x+y<<endl;              break;
+
+            case 3: cout<<"\n\n\n\n\n\n\t\t\t\t\t\t"<<x<<" / "<<y<<" = "<<(double)x/y<<endl;      break;
+
+            case 4: cout<<"\n\n\n\n\n\n\t\t\t\t\t\t"<<x<<" * "<<y<<" = "<<x*y<<endl;              break;
+
+            default : cout<<"You've choosed a Non-existing operation !!";
+
+                    }
+        }
+        else
+        {
+            //cout<<"Invalid input \n";
+            cin.clear();
+            cin.ignore();
+            goto choice1 ;
+        }
+
 
     cout<<"\n\n\n\n\n\n\n\n0) Exit \n1) Proceed \n\n ";
     cin>>s;
@@ -229,6 +250,7 @@ int main(){
         break;
 
     case 2:
+        {
         bool s = 1 ;
         while(s != 0){
             system("CLS");
@@ -245,19 +267,19 @@ int main(){
         cin>>x;
         system("CLS");
         switch(q){
-     case 1:
+            case 1:
           cout<<"\n\n\n\t\t\t\t\t\tDEC  :  "<<x<<endl;
           cout<<"\n\t\t\t\t\t\tBIN  :  "<<decToBin(x)<<endl;
           cout<<"\n\t\t\t\t\t\tHEXA :  "<<decToHex(x)<<endl;
           cout<<"\n\t\t\t\t\t\tOCT :  "<<decToOctal(x)<<endl;
       break;
-     case 2:
+            case 2:
           cout<<"\n\t\t\t\t\t\tBIN  :  "<<x<<endl;
           cout<<"\n\t\t\t\t\t\tDEC  :  "<<binToDec(x)<<endl;
           cout<<"\n\t\t\t\t\t\tHEXA :  "<<decToHex(binToDec(x))<<endl;
           cout<<"\n\t\t\t\t\t\tOCT :  "<<binToOctal(x)<<endl;
         break;
-     case 3:
+            case 3:
          /*string hex = "" ;
          cin>>hex;
           cout<<"\n\t\t\t\t\t\tHEXA :  "<<x<<endl;
@@ -268,19 +290,28 @@ int main(){
 
 
         break;
-     case 4:
+            case 4:
           cout<<"\n\t\t\t\t\t\tOCT :  "<<x<<endl;
           cout<<"\n\t\t\t\t\t\tBIN  :  "<<octalToBin(x)<<endl;
           cout<<"\n\t\t\t\t\t\tDEC  :  "<<octalToDec(x)<<endl;
           cout<<"\n\t\t\t\t\t\tHEXA :  "<<decToHex(octalToDec(x))<<endl;
 
-     break;
+        break;
         }
 
     cout<<"\n\n\n\n\n\n\n\n0) Exit \n1) Proceed \n\n";
     cin>>s;
     }
+
             break ;
+        }
+
+     default :
+         cin.clear();
+         cin.ignore();
+         system("cls");
+        goto start ;
+
     }
 
 }
