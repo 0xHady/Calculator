@@ -3,76 +3,6 @@
 #include <cmath>
 using namespace std;
 
-string hexToBin (char hexa[8])
-{
-
-    int i = 8 ;
-    string s = "";
-     while (hexa[i])
-        {
-      switch (hexa[i]){
-      case '0':
-         cout << "0000";
-         break;
-      case '1':
-         cout << "0001";
-         break;
-      case '2':
-         cout << "0010";
-         break;
-      case '3':
-         cout << "0011";
-         break;
-      case '4':
-         cout << "0100";
-         break;
-      case '5':
-         cout << "0101";
-         break;
-      case '6':
-         cout << "0110";
-         break;
-      case '7':
-         cout << "0111";
-         break;
-      case '8':
-         cout << "1000";
-         break;
-      case '9':
-         cout << "1001";
-         break;
-      case 'A':
-      case 'a':
-         cout << "1010";
-         break;
-      case 'B':
-      case 'b':
-         cout << "1011";
-         break;
-      case 'C':
-      case 'c':
-         cout << "1100";
-         break;
-      case 'D':
-      case 'd':
-         cout << "1101";
-         break;
-      case 'E':
-      case 'e':
-         cout << "1110";
-         break;
-      case 'F':
-      case 'f':
-         cout << "1111";
-         break;
-      default:
-         cout <<"";
-      }
-   i--;
-   }
-   return s;
-}
-
 long long octalToBin(unsigned long long n){
 
     int decNum = 0 , i = 0 ;
@@ -307,6 +237,8 @@ int main(){
         cin>>q;
         system("CLS");
 
+        inpq :
+
         if(!cin)
         {
             cin.clear();
@@ -314,7 +246,6 @@ int main(){
             system("CLS");
             goto numeric ;
         }
-
         if(q == 0)
         {
             goto start ;
@@ -326,21 +257,96 @@ int main(){
         else if(q==3)
         {
            {
-            cout<<"Note: this program can handel only -at maximum- 8 digits \n" ;
+
             char x[8]  ;
-            for(int i= 1 ; i<=8 ; i++)
+
+            for(int i= 0 ; i<=7 ; i++)
             {
             system("cls");
-            cout<<"enter chrachter number "<<i<<" From the right \n " ;
+            cout<<"Note: this program can handel only -at maximum- 8 digits \n-------------------------------------------------------\n" ;
+            cout<<"enter chrachter number "<<i+1<<" From the right \n" ;
             cin>>x[i];
+
+            }
+            system("cls");
+
+            cout<<"\n\n\n\n\t\tBIN : ";
+
+            int a = 7 ;
+            //bool z = 1;
+            while (x[a])
+            {
+                switch(x[a])
+                {
+         case '0':
+         cout << " 0000";
+         break;
+      case '1':
+         cout << " 0001";
+         break;
+      case '2':
+         cout << " 0010";
+         break;
+      case '3':
+         cout << " 0011";
+         break;
+      case '4':
+         cout << " 0100";
+         break;
+      case '5':
+         cout << " 0101";
+         break;
+      case '6':
+         cout << " 0110";
+         break;
+      case '7':
+         cout << " 0111";
+         break;
+      case '8':
+         cout << " 1000";
+         break;
+      case '9':
+         cout << " 1001";
+         break;
+      case 'A':
+      case 'a':
+         cout << " 1010";
+         break;
+      case 'B':
+      case 'b':
+         cout << " 1011";
+         break;
+      case 'C':
+      case 'c':
+         cout << " 1100";
+         break;
+      case 'D':
+      case 'd':
+         cout << " 1101";
+         break;
+      case 'E':
+      case 'e':
+         cout << " 1110";
+         break;
+      case 'F':
+      case 'f':
+         cout << " 1111";
+         break;
+
+      default :
+
+                system("cls");
+                cout<<"your invalid inputs have been ignored \n-----------------------------\nthe result of the valid inputs is : ";
+                break;
+                break ;
+
+            }
+    a--;
             }
 
-            system("cls");
-        
-            cout<<"\n\n\n\n\t\tBIN  :  "<<hexToBin(x)<<endl;
-            
-            //cout<<"\n\n\n\n\t\tDEC  :  "<<endl;
-            //cout<<"\n\t\tOCT :  "<<endl;
+            //cout<<"\n\n\n\n\t\tDEC  :  "<<binToDec(hexToBin(x))<<endl;
+
+            // cout<<"\n\t\tOCT :  "<<binToOctal(hexToBin(x))  <<endl;
 
 
 
