@@ -3,9 +3,10 @@
 #include <cmath>
 using namespace std;
 
-/*string hexToBin (string hexa){
+string hexToBin (char hexa[8])
+{
 
-    int i = 0 ;
+    int i = 8 ;
     string s = "";
      while (hexa[i])
         {
@@ -65,13 +66,13 @@ using namespace std;
          cout << "1111";
          break;
       default:
-         cout <<hexa[i];
+         cout <<"";
       }
-   i++;
+   i--;
    }
    return s;
 }
-*/
+
 long long octalToBin(unsigned long long n){
 
     int decNum = 0 , i = 0 ;
@@ -325,15 +326,26 @@ int main(){
         else if(q==3)
         {
            {
-       /*  string hex = "" ;
-         cin>>hex;
-          cout<<"\n\t\t\t\t\t\tHEXA :  "<<hex<<endl;
-          cout<<"\n\t\t\t\t\t\tOCT :  "<<endl;
-          cout<<"\n\t\t\t\t\t\tBIN  :  "<<hexToBin(hex)<<endl;
-          cout<<"\n\t\t\t\t\t\tDEC  :  "<<endl;*/
-          cout<<"Test ......... "<<endl;
-        break;
+            cout<<"Note: this program can handel only -at maximum- 8 digits \n" ;
+            char x[8]  ;
+            for(int i= 1 ; i<=8 ; i++)
+            {
+            system("cls");
+            cout<<"enter chrachter number "<<i<<" From the right \n " ;
+            cin>>x[i];
+            }
+
+            system("cls");
+        
+            cout<<"\n\n\n\n\t\tBIN  :  "<<hexToBin(x)<<endl;
+            
+            //cout<<"\n\n\n\n\t\tDEC  :  "<<endl;
+            //cout<<"\n\t\tOCT :  "<<endl;
+
+
+
                 }
+
         }
         else {
 
