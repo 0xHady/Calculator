@@ -128,6 +128,7 @@ int main(){
     cout<<"\t\t\t\t*****                                             *****"<<endl;
     cout<<"\t\t\t\t*******************************************************"<<endl;
     cout<<"\t\t\t\t*******************************************************"<<endl;
+    cout<<"\t\t\t\t\t\t\t   ";
 
     // q is the user's choice
     int q ;
@@ -146,7 +147,7 @@ int main(){
         // change color
         system("color 0a");
         // clear the console
-        system("CLS");
+        system("cls");
 
         // label
 
@@ -163,12 +164,13 @@ int main(){
         cout<<"\t\t\t\t*****                                              *****"<<endl;
         cout<<"\t\t\t\t********************************************************"<<endl;
         cout<<"\t\t\t\t********************************************************"<<endl;
+        cout<<"\t\t\t\t\t\t\t   ";
 
         int z ;
         cin>> z ;
 
-        system("CLS");
-        cnz :
+        system("cls");
+
         if(cin)
         {
           if(z == 0)
@@ -189,8 +191,7 @@ int main(){
                 cin.clear();
                 cin.ignore();
                 system("cls");
-                goto cnz ;
-            }
+cout<<"\n\n\n\n\n\t\t\t\tInvalid Input";            }
             if(n <0 || n >65)
             {
                 system("cls");
@@ -236,13 +237,13 @@ int main(){
           else
                 {
                     double x , y ;
-                    system("CLS");
+                    system("cls");
                     cout<<"\n\n\n\n\n\t\t\t\t\tEnter the First number: ";
                     cin>>x;
-                    system("CLS");
+                    system("cls");
                     cout<<"\n\n\n\n\n\t\t\t\t\tEnter the second number: ";
                     cin>>y;
-                    system("CLS");
+                    system("cls");
 
                     switch(z){
 
@@ -304,7 +305,7 @@ int main(){
         {
         bool s = 1 ;
         while(s != 0){
-            system("CLS");
+            system("cls");
             system("color 0a");
         numeric :
         cout<<         "\n\n\n\n\n\t\t\t\t*******************************************************"<<endl;
@@ -319,8 +320,9 @@ int main(){
         cout<<                   "\t\t\t\t*****                                             *****"<<endl;
         cout<<                   "\t\t\t\t*******************************************************"<<endl;
         cout<<                   "\t\t\t\t*******************************************************"<<endl;
+        cout<<"\t\t\t\t\t\t\t   ";
         cin>>q;
-        system("CLS");
+        system("cls");
 
         inpq :
 
@@ -328,7 +330,7 @@ int main(){
         {
             cin.clear();
             cin.ignore();
-            system("CLS");
+            system("cls");
             goto numeric ;
         }
         if(q == 0)
@@ -342,8 +344,33 @@ int main(){
         else if(q==3)
         {
            {
+                int f ;
+                 cout<<"\n\n\n\n\n\t\t\t\t***********************************************"<<endl;
+        cout<<          "\t\t\t\t************************************************"<<endl;
+        cout<<          "\t\t\t\t*****                                      *****"<<endl;
+        cout<<"\t\t\t\t*****    Convert hexadecimal to ...        *****"<<endl;
+        cout<<"\t\t\t\t*****    1) binary                         *****"<<endl;
+        cout<<"\t\t\t\t*****    2) decimal                        *****"<<endl;
+        cout<<"\t\t\t\t*****    3) octal                          *****"<<endl;
+        cout<<"\t\t\t\t*****                                      *****"<<endl;
+        cout<<"\t\t\t\t************************************************"<<endl;
+        cout<<"\t\t\t\t************************************************"<<endl;
+        cout<<"\t\t\t\t\t\t\t   ";
+        cin>>f;
+        inpf :
+        if(!cin)
+        {
+            cin.clear();
+            cin.ignore();
+            system("cls");
+            cout<<"Invalid Input "<<endl;
+            goto inpq;
+        }
 
-            char x[8]  ;
+            switch(f) {
+
+            case 1 : {
+                  char x[8]  ;
 
             for(int i= 0 ; i<=7 ; i++)
             {
@@ -429,10 +456,85 @@ int main(){
     a--;
             }
 
-            //cout<<"\n\n\n\n\t\tDEC  :  "<<binToDec(hexToBin(x))<<endl;
+                break;
 
-            // cout<<"\n\t\tOCT :  "<<binToOctal(hexToBin(x))  <<endl;
+                 }
 
+      case 2:
+            {        system("cls");
+
+                unsigned long long x9 ;
+            cout<<"\n\n\n\n\n\t\t\t\tEnter the hexadecimal number: ";
+           cin >> hex >> x9;
+        if(!cin)
+        {
+            cin.clear();
+            cin.ignore();
+            system("cls");
+            cout<<"Invalid Input "<<endl;
+
+        }
+                system("cls");
+
+
+
+
+          cout<<         "\n\n\n\n\n\t\t\t\t*******************************************************"<<endl;
+        cout<<                   "\t\t\t\t*******************************************************"<<endl;
+         cout<<                   "\t\t\t\t                                              "<<endl;
+        cout<<                   "\t\t\t\t          DEC  :  "<<x9<<"                 "<<endl;
+        cout<<                   "\t\t\t\t                                              "<<endl;
+        cout<<                   "\t\t\t\t*******************************************************"<<endl;
+        cout<<                   "\t\t\t\t*******************************************************"<<endl;
+
+
+        break;
+            }
+      case 3:
+        {        system("cls");
+
+            unsigned long long x11;
+            cout<<"\n\n\n\n\n\t\t\t\tEnter the hexadecimal number: ";
+           cin >> hex >> x11;
+
+        if(!cin)
+        {
+            cin.clear();
+            cin.ignore();
+            system("cls");
+            cout<<"Invalid Input "<<endl;
+
+        }
+           int rem, i = 1, octalNumber = 0;
+    while (x11 != 0)
+    {
+        rem = x11 % 8;
+        x11 /= 8;
+        octalNumber += rem * i;
+        i *= 10;
+    }
+            system("cls");
+
+
+  cout<<         "\n\n\n\n\n\t\t\t\t*******************************************************"<<endl;
+        cout<<                   "\t\t\t\t*******************************************************"<<endl;
+         cout<<                   "\t\t\t\t                                              "<<endl;
+        cout<<                   "\t\t\t\t          Octal  :  "<<octalNumber<<"                 "<<endl;
+        cout<<                   "\t\t\t\t                                              "<<endl;
+        cout<<                   "\t\t\t\t*******************************************************"<<endl;
+        cout<<                   "\t\t\t\t*******************************************************"<<endl;
+
+break;
+        }
+
+
+
+        default : cout<<"Invalid Input "<<endl;
+                system("cls");
+
+
+
+            }
 
 
                 }
@@ -440,7 +542,7 @@ int main(){
         }
         else {
 
-        system("CLS");
+        system("cls");
         enternum :
         unsigned long long x ;
         cout<<"\n\n\n\t\t\t\t\t\tEnter the number\n\t\t\t\t\t\t "<<endl;
@@ -682,6 +784,7 @@ cout<<"\n\t\t\t\t\t\tHEXA :  "<<hexdec_num<<endl;
                 cout<<"**            **\n";
                 cout<<"****************\n";
                 cout<<"****************\n";
+                cout<<"      ";
     cin>>s;
 
     }
