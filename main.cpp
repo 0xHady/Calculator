@@ -119,8 +119,15 @@ using namespace std;
 int main(){
     start :
     system("color 0a");
-    cout<<"1) Do basic operations "<<endl;
-    cout<<"2) convert between numeric systems "<<endl;
+    cout<<"\n\n\n\n\n\t\t\t\t*******************************************************"<<endl;
+    cout<<"\t\t\t\t*******************************************************"<<endl;
+    cout<<"\t\t\t\t*****                                             *****"<<endl;
+    cout<<"\t\t\t\t*****      1) Do Basic Operations                 *****"<<endl;
+    cout<<"\t\t\t\t*****                                             *****"<<endl;
+    cout<<"\t\t\t\t*****      2) Convert Between Numeric Systems     *****"<<endl;
+    cout<<"\t\t\t\t*****                                             *****"<<endl;
+    cout<<"\t\t\t\t*******************************************************"<<endl;
+    cout<<"\t\t\t\t*******************************************************"<<endl;
 
     // q is the user's choice
     int q ;
@@ -144,11 +151,18 @@ int main(){
         // label
 
         choice1 :
-        cout<<"choose the operation \n" ;
-        cout<<"1) Subtraction      2) Addition         "<<endl;
-        cout<<"3) Devision         4) Multiplication   "<<endl;
-        cout<<"5) Factorial        6) Power        \n\n"<<endl;
-        cout<<"0) Go Back                              "<<endl;
+        cout<<"\n\n\n\n\n\t\t\t\t********************************************************"<<endl;
+        cout<<          "\t\t\t\t********************************************************"<<endl;
+        cout<<"\t\t\t\t*****                                              *****"<<endl;
+        cout<<"\t\t\t\t*****    choose the operation                      *****"<<endl;
+        cout<<"\t\t\t\t*****    1) Subtraction      2) Addition           *****"<<endl;
+        cout<<"\t\t\t\t*****    3) Devision         4) Multiplication     *****"<<endl;
+        cout<<"\t\t\t\t*****    5) Factorial        6) Power              *****"<<endl;
+        cout<<"\t\t\t\t*****                                              *****"<<endl;
+        cout<<"\t\t\t\t*****    0) Go Back                                *****"<<endl;
+        cout<<"\t\t\t\t*****                                              *****"<<endl;
+        cout<<"\t\t\t\t********************************************************"<<endl;
+        cout<<"\t\t\t\t********************************************************"<<endl;
 
         int z ;
         cin>> z ;
@@ -168,7 +182,7 @@ int main(){
 
         unsigned int n;
         unsigned long long factorial = 1;
-        cout << "Enter a positive integer: ";
+        cout << "\n\n\n\n\n\t\t\t\tEnter a positive integer: ";
         cin >> n;
             if(!cin)
             {
@@ -180,7 +194,7 @@ int main(){
             if(n <0 || n >65)
             {
                 system("cls");
-                cout<<"Invalid Input";
+                cout<<"\n\n\n\n\n\t\t\t\tInvalid Input";
             }
             else {
         for(int i = 1; i <=n; ++i)
@@ -204,17 +218,17 @@ int main(){
             }
             else {
               double x, y , pow =1 ;
-              cout<<"Enter the base\n";
+              cout<<"\n\n\n\n\n\n\t\t\t\t\tEnter the base: ";
               cin>>x;
               system("cls");
-              cout<<"Enter the exponent\n";
+              cout<<"\n\n\n\n\n\n\t\t\t\t\tEnter the exponent: ";
               cin>>y;
               system("cls");
               for( int i = 1 ; i<=y ; i++)
               {
                   pow*=x;
               }
-              cout<<"\n\n\n\n\t\t\t\t\t"<<x<<"^("<<y<<")"<<" = "<<pow;
+              cout<<"\n\n\n\n\n\n\t\t\t\t\t"<<x<<"^("<<y<<")"<<" = "<<pow;
               }
 
           }
@@ -223,8 +237,11 @@ int main(){
                 {
                     double x , y ;
                     system("CLS");
-                    cout<<"Enter the two numbers \n";
-                    cin>>x>>y ;
+                    cout<<"\n\n\n\n\n\t\t\t\t\tEnter the First number: ";
+                    cin>>x;
+                    system("CLS");
+                    cout<<"\n\n\n\n\n\t\t\t\t\tEnter the second number: ";
+                    cin>>y;
                     system("CLS");
 
                     switch(z){
@@ -290,11 +307,18 @@ int main(){
             system("CLS");
             system("color 0a");
         numeric :
-        cout<<"  1)Convert from decimal        "<<endl;
-        cout<<"  2)Convert from binary        "<<endl;
-        cout<<"  3)Convert from hexadecimal        "<<endl;
-        cout<<"  4)Convert from octal        \n\n"<<endl;
-        cout<<"  0)Go Back                "<<endl;
+        cout<<         "\n\n\n\n\n\t\t\t\t*******************************************************"<<endl;
+        cout<<                   "\t\t\t\t*******************************************************"<<endl;
+        cout<<                   "\t\t\t\t*****                                             *****"<<endl;
+        cout<<                   "\t\t\t\t*****          1)Convert from decimal             *****"<<endl;
+        cout<<                   "\t\t\t\t*****          2)Convert from binary              *****"<<endl;
+        cout<<                   "\t\t\t\t*****          3)Convert from hexadecimal         *****"<<endl;
+        cout<<                   "\t\t\t\t*****          4)Convert from octal               *****"<<endl;
+        cout<<                   "\t\t\t\t*****                                             *****"<<endl;
+        cout<<                   "\t\t\t\t*****          0)Go Back                          *****"<<endl;
+        cout<<                   "\t\t\t\t*****                                             *****"<<endl;
+        cout<<                   "\t\t\t\t*******************************************************"<<endl;
+        cout<<                   "\t\t\t\t*******************************************************"<<endl;
         cin>>q;
         system("CLS");
 
