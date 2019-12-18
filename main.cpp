@@ -145,21 +145,80 @@ int main(){
 
         choice1 :
         cout<<"choose the operation \n" ;
-        cout<<"1) subtraction      2) addition         "<<endl;
-        cout<<"3) devision         4) multiplication   \n\n"<<endl;
+        cout<<"1) Subtraction      2) Addition         "<<endl;
+        cout<<"3) Devision         4) Multiplication   "<<endl;
+        cout<<"5) Factorial        6) Power        \n\n"<<endl;
         cout<<"0) Go Back                              "<<endl;
 
         int z ;
         cin>> z ;
 
         system("CLS");
-
+        cnz :
         if(cin)
         {
           if(z == 0)
           {
               goto start;
           }
+
+          else if (z == 5)
+          {
+
+
+        unsigned int n;
+        unsigned long long factorial = 1;
+        cout << "Enter a positive integer: ";
+        cin >> n;
+            if(!cin)
+            {
+                cin.clear();
+                cin.ignore();
+                system("cls");
+                goto cnz ;
+            }
+            if(n <0 || n >65)
+            {
+                system("cls");
+                cout<<"Invalid Input";
+            }
+            else {
+        for(int i = 1; i <=n; ++i)
+        {
+        factorial *= i;
+        }
+        system("cls");
+        cout << "\n\n\n\n\n\t\t\t\t\t\t" << n << "! = " << factorial;
+            }
+          }
+
+          else if (z == 6)
+          {
+              if(!cin)
+            {
+                cin.clear();
+                cin.ignore();
+                system("cls");
+                cout<<"Invalid Input\n\n";
+
+            }
+            else {
+              double x, y , pow =1 ;
+              cout<<"Enter the base\n";
+              cin>>x;
+              system("cls");
+              cout<<"Enter the exponent\n";
+              cin>>y;
+              system("cls");
+              for( int i = 1 ; i<=y ; i++)
+              {
+                  pow*=x;
+              }
+              cout<<"\n\n\n\n\t\t\t\t\t"<<x<<"^("<<y<<")"<<" = "<<pow;
+              }
+
+          }
+
           else
                 {
                     double x , y ;
@@ -182,6 +241,7 @@ int main(){
 
 
             case 4: cout<<"\n\n\n\n\n\n\t\t\t\t\t\t"<<x<<" * "<<y<<" = "<<x*y<<endl;              break;
+
 
             default : cout<<"You've choosed a Non-existing operation !!";
 
