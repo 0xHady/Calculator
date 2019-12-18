@@ -1,9 +1,8 @@
 #include <iostream>
-#include <windows.h>
 #include <cmath>
 using namespace std;
 
-long long octalToBin(unsigned long long n){
+/*long long octalToBin(unsigned long long n){
 
     int decNum = 0 , i = 0 ;
     long long binNum = 0;
@@ -23,8 +22,8 @@ long long octalToBin(unsigned long long n){
     }
     return binNum ;
 }
-
-int octalToDec(unsigned long long n){
+*/
+/*int octalToDec(unsigned long long n){
 
     int decNum = 0 , i = 0 , remainder ;
     while (n !=0)
@@ -36,8 +35,8 @@ int octalToDec(unsigned long long n){
     }
     return decNum ;
 }
-
-int binToOctal(unsigned long long n){
+*/
+/* int binToOctal(unsigned long long n){
 
     int octalNum = 0 , decNum = 0 , i = 0 ;
 
@@ -56,8 +55,8 @@ int binToOctal(unsigned long long n){
     }
     return octalNum ;
 }
-
-int binToDec(unsigned long long n){
+*/
+/* int binToDec(unsigned long long n){
 
     int decNum = 0 , i =0 , remainder ;
     while(n!=0)
@@ -69,8 +68,8 @@ int binToDec(unsigned long long n){
     }
     return decNum ;
 }
-
-int decToOctal(unsigned long long n){
+*/
+/* int decToOctal(unsigned long long n){
 
     int rem, i = 1, octalNumber = 0;
     while (n != 0)
@@ -82,8 +81,8 @@ int decToOctal(unsigned long long n){
     }
     return octalNumber;
 }
-
-string decToBin(unsigned long long n){
+*/
+/* string decToBin(unsigned long long n){
 
 
 	int binaryNum[32];
@@ -101,8 +100,8 @@ string decToBin(unsigned long long n){
 
 
 }
-
-string decToHex(unsigned long long n){
+*/
+/* string decToHex(unsigned long long n){
 
     int r;
     string hexdec_num="";
@@ -116,9 +115,10 @@ string decToHex(unsigned long long n){
         }
         return hexdec_num;
 }
-
+*/
 int main(){
     start :
+    system("color 0a");
     cout<<"1) Do basic operations "<<endl;
     cout<<"2) convert between numeric systems "<<endl;
 
@@ -222,6 +222,7 @@ int main(){
   /*********************************************************************************************************************
   Numeric systems conversions
   *********************************************************************************************************************/
+
     case 2:
         {
         bool s = 1 ;
@@ -363,7 +364,7 @@ int main(){
 
         switch(q){
 
-            case 1:
+            case 1:{
                     if(!cin)
                     {
                         cin.clear();
@@ -373,11 +374,58 @@ int main(){
                     }
 
           system("cls");
+
           cout<<"\n\n\n\t\t\t\t\t\tDEC  :  "<<x<<endl;
-          cout<<"\n\t\t\t\t\t\tBIN  :  "<<decToBin(x)<<endl;
-          cout<<"\n\t\t\t\t\t\tHEXA :  "<<decToHex(x)<<endl;
-          cout<<"\n\t\t\t\t\t\tOCT :  "<<decToOctal(x)<<endl;
+
+      {
+
+        int binaryNum[32]; unsigned x4 = x ;
+	int i = 0;
+	while (x4 > 0) {
+		binaryNum[i] = x4 % 2;
+		x4 = x4 / 2;
+		i++; }
+    cout<<"\n\t\t\t\t\t\tBIN  :  ";
+	for (int j = i -1; j >= 0; j--)
+		{cout << binaryNum[j];}
+		cout<<endl;
+
+    }
+{
+
+
+            int r2; unsigned long long x5 = x ;
+    string hexdec_num="";
+    char hex[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+
+        while(x5>0)
+        {
+            r2 = x5 % 16;
+            hexdec_num = hex[r2] + hexdec_num;
+            x5 = x5/16;
+        }
+
+    cout<<"\n\t\t\t\t\t\tHEXA :  "<<hexdec_num<<endl;
+}
+
+
+            {
+
+    int rem, i = 1, octalNumber = 0; unsigned long long x6 = x ;
+    while (x6 != 0)
+    {
+        rem = x6 % 8;
+        x6 /= 8;
+        octalNumber += rem * i;
+        i *= 10;
+    }
+cout<<"\n\t\t\t\t\t\tOCT :  "<<octalNumber<<endl;
+}
+
+
+
         break;
+}
 
             case 2:{
 
@@ -394,7 +442,7 @@ int main(){
                 unsigned long long j = x ;
                 while(j)
                 {
-                    if((j%10)>1 )
+                    if((j%10)>1 ) ///
                     {
                         system("cls");
                         goto enternum ;
@@ -406,9 +454,55 @@ int main(){
 
           system("cls");
           cout<<"\n\t\t\t\t\t\tBIN  :  "<<x<<endl;
-          cout<<"\n\t\t\t\t\t\tDEC  :  "<<binToDec(x)<<endl;
-          cout<<"\n\t\t\t\t\t\tHEXA :  "<<decToHex(binToDec(x))<<endl;
-          cout<<"\n\t\t\t\t\t\tOCT :  "<<binToOctal(x)<<endl;
+
+
+
+    int decNum = 0 , i =0 , remainder ; unsigned long long x6 = x;
+    while(x6!=0)
+    {
+        remainder = x6 % 10 ;
+        x6/= 10 ;
+        decNum += remainder*pow(2,i) ;
+        i++;
+    }
+cout<<"\n\t\t\t\t\t\tDEC  :  "<<decNum<<endl;
+
+
+
+
+    int r;
+    string hexdec_num="";
+    char hex[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+
+        while(decNum>0)
+        {
+            r = decNum % 16;
+            hexdec_num = hex[r] + hexdec_num;
+            decNum = decNum/16;
+        }
+    cout<<"\n\t\t\t\t\t\tHEXA :  "<<hexdec_num<<endl;
+
+        {
+
+    int octalNum = 0 , decNum = 0 , i = 0 ; unsigned long long x7 = x ;
+
+    while(x7!=0)
+    {
+        decNum += (x7%10)*pow(2,i);
+        i++;
+        x7 /=10;
+    }
+    i = 1 ;
+    while (decNum !=0)
+    {
+        octalNum += (decNum % 8) * i;
+        decNum /= 8 ;
+        i *= 10 ;
+    }
+cout<<"\n\t\t\t\t\t\tOCT :  "<<octalNum<<endl;
+}
+
+
         break;
             }
 
@@ -434,9 +528,59 @@ int main(){
                 }
           system("cls");
           cout<<"\n\t\t\t\t\t\tOCT :  "<<x<<endl;
-          cout<<"\n\t\t\t\t\t\tBIN  :  "<<octalToBin(x)<<endl;
-          cout<<"\n\t\t\t\t\t\tDEC  :  "<<octalToDec(x)<<endl;
-          cout<<"\n\t\t\t\t\t\tHEXA :  "<<decToHex(octalToDec(x))<<endl;
+
+          {
+
+    int decNum = 0 , i = 0 ; unsigned long long x1 = x;
+    long long binNum = 0;
+
+    while (x1 != 0)
+    {
+        decNum += (x1 % 10) * pow(8,i);
+        i++;
+        x1 /= 10 ;
+    }
+    i = 1 ;
+    while (decNum != 0)
+    {
+        binNum += (decNum % 2) * i ;
+        decNum /= 2 ;
+        i *= 10 ;
+    }
+cout<<"\n\t\t\t\t\t\tBIN  :  "<<binNum<<endl;
+}
+
+
+
+
+    unsigned long long decNum2 = 0 , x2 = x; int  i = 0 , remainder ;
+    while (x2 !=0)
+    {
+        remainder  = x2 % 10 ;
+        decNum2  += remainder * pow(8,i);
+        x2 /= 10;
+        ++i;
+    }
+cout<<"\n\t\t\t\t\t\tDEC  :  "<<decNum2<<endl;
+
+
+
+
+
+    int r;
+    string hexdec_num="";
+    char hex[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+
+        while(decNum2>0)
+        {
+            r = decNum2 % 16;
+            hexdec_num = hex[r] + hexdec_num;
+            decNum2 = decNum2/16;
+        }
+cout<<"\n\t\t\t\t\t\tHEXA :  "<<hexdec_num<<endl;
+
+
+
 
         break;
 
@@ -455,6 +599,7 @@ int main(){
                 cout<<"****************\n";
                 cout<<"****************\n";
     cin>>s;
+
     }
 
             break ;
