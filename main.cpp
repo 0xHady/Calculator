@@ -1,121 +1,6 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-
-/*long long octalToBin(unsigned long long n){
-
-    int decNum = 0 , i = 0 ;
-    long long binNum = 0;
-
-    while (n != 0)
-    {
-        decNum += (n % 10) * pow(8,i);
-        i++;
-        n /= 10 ;
-    }
-    i = 1 ;
-    while (decNum != 0)
-    {
-        binNum += (decNum % 2) * i ;
-        decNum /= 2 ;
-        i *= 10 ;
-    }
-    return binNum ;
-}
-*/
-/*int octalToDec(unsigned long long n){
-
-    int decNum = 0 , i = 0 , remainder ;
-    while (n !=0)
-    {
-        remainder  = n % 10 ;
-        n /= 10;
-        decNum  += remainder * pow(8 , i);
-        i++;
-    }
-    return decNum ;
-}
-*/
-/* int binToOctal(unsigned long long n){
-
-    int octalNum = 0 , decNum = 0 , i = 0 ;
-
-    while(n!=0)
-    {
-        decNum += (n%10)*pow(2,i);
-        i++;
-        n /=10;
-    }
-    i = 1 ;
-    while (decNum !=0)
-    {
-        octalNum += (decNum % 8) * i;
-        decNum /= 8 ;
-        i *= 10 ;
-    }
-    return octalNum ;
-}
-*/
-/* int binToDec(unsigned long long n){
-
-    int decNum = 0 , i =0 , remainder ;
-    while(n!=0)
-    {
-        remainder = n % 10 ;
-        n/= 10 ;
-        decNum += remainder*pow(2,i) ;
-        i++;
-    }
-    return decNum ;
-}
-*/
-/* int decToOctal(unsigned long long n){
-
-    int rem, i = 1, octalNumber = 0;
-    while (n != 0)
-    {
-        rem = n % 8;
-        n /= 8;
-        octalNumber += rem * i;
-        i *= 10;
-    }
-    return octalNumber;
-}
-*/
-/* string decToBin(unsigned long long n){
-
-
-	int binaryNum[32];
-	int i = 0;
-	string s = "";
-
-	while (n > 0) {
-		binaryNum[i] = n % 2;
-		n = n / 2;
-		i++; }
-
-	for (int j = i -1; j >= 0; j--)
-		{cout << binaryNum[j];}
-		return s;
-
-
-}
-*/
-/* string decToHex(unsigned long long n){
-
-    int r;
-    string hexdec_num="";
-    char hex[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
-
-        while(n>0)
-        {
-            r = n % 16;
-            hexdec_num = hex[r] + hexdec_num;
-            n = n/16;
-        }
-        return hexdec_num;
-}
-*/
 int main(){
     start :
     system("color 0a");
@@ -628,7 +513,7 @@ cout<<"\n\t\t\t\t\t\tOCT :  "<<octalNumber<<endl;
                 unsigned long long j = x ;
                 while(j)
                 {
-                    if((j%10)>1 ) ///
+                    if((j%10)>1 )
                     {
                         system("cls");
                         goto enternum ;
@@ -786,6 +671,7 @@ cout<<"\n\t\t\t\t\t\tHEXA :  "<<hexdec_num<<endl;
                 cout<<"****************\n";
                 cout<<"      ";
     cin>>s;
+
 
     }
 
