@@ -3,7 +3,7 @@ Features :-
 
   1- do basic operations 
   
-  2- convert between all numeric systems
+  2- convert between all numeric systems (didn't conribute in this part)
   
   3- coloered
   
